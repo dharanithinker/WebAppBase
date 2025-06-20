@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Niaa - AI Photobooth: Capture Your Moments Enhanced by AI">
+    <title>Niaa - AI Photobooth | AI Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Niaa-specific styles */
+        .hero.niaa-hero {
+            background: linear-gradient(135deg, #7209b7, #3a0ca3);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .feature-card {
+            background-color: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-normal);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .feature-icon {
+            width: 7rem;
+            height: 7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-md);
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            color: var(--white);
+        }
+        
+        .feature-icon i {
+            font-size: 2.8rem;
+        }
+        
+        .pricing-plans {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .pricing-card {
+            background-color: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .pricing-card.featured::before {
+            content: "Most Popular";
+            position: absolute;
+            top: 1.5rem;
+            right: -3rem;
+            background: var(--gradient-secondary);
+            color: var(--white);
+            padding: 0.5rem 3rem;
+            transform: rotate(45deg);
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        
+        .pricing-header {
+            text-align: center;
+            padding-bottom: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            border-bottom: 1px solid var(--gray-light);
+        }
+        
+        .pricing-name {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .pricing-features {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .pricing-features li {
+            padding: var(--spacing-xs) 0;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .pricing-features i {
+            color: var(--primary-color);
+            margin-right: var(--spacing-sm);
+            margin-top: 0.4rem;
+        }
+        
+        .pricing-cta {
+            text-align: center;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .gallery-item {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-normal);
+            position: relative;
+            aspect-ratio: 1 / 1;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-normal);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .addons-section {
+            margin-top: var(--spacing-xl);
+            background-color: var(--bg-color);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+        }
+        
+        .addons-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: var(--spacing-md);
+        }
+        
+        .addons-table th,
+        .addons-table td {
+            padding: var(--spacing-sm) var(--spacing-md);
+            text-align: left;
+            border-bottom: 1px solid var(--gray-light);
+        }
+        
+        .addons-table th {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .addons-note {
+            margin-top: var(--spacing-md);
+            font-size: 1.4rem;
+            color: var(--text-light);
+        }
+        
+        .catalogue-link {
+            display: inline-block;
+            margin-top: var(--spacing-md);
+            font-weight: 500;
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+        
+        @media (min-width: 768px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .pricing-plans {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.svg" alt="AI Solutions Logo" id="logo-img">
+                <h1>AI Solutions</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero niaa-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Capture Your Moments Enhanced by AI</h1>
+                <p>Make any event unforgettable with Niaa, the AI-powered photobooth that delivers stunning, enhanced photos in seconds.</p>
+                <a href="#contact" class="btn-primary">Contact Us</a>
+            </div>
+            <div class="hero-image">
+                <img src="images/niaa-hero.svg" alt="Niaa AI Photobooth">
+            </div>
+        </div>
+    </section>
+
+    <section id="about-niaa" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>What We Do</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Niaa transforms events with cutting-edge AI technology that creates magical, shareable moments. Our AI-powered photobooth delivers stunning, enhanced photos in seconds, making any event truly unforgettable.</p>
+                    <p>Whether you're hosting a wedding, corporate event, birthday party, or any special occasion, Niaa adds a unique, interactive experience that your guests will love. With customizable themes, easy sharing options, and high-quality prints, Niaa is the perfect addition to any event.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/niaa-about.svg" alt="Niaa AI Photobooth in action">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Key Features</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>AI-Generated Photos</h3>
+                    <p>Capture moments with stunning, AI-enhanced images that transform regular photos into extraordinary memories.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Customizable Themes</h3>
+                    <p>Choose from a variety of themes, backgrounds, and avatars to match your event's aesthetic.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tablet-alt"></i>
+                    </div>
+                    <h3>Interactive Touchscreen</h3>
+                    <p>Easy-to-use interface designed for guests of all ages to enjoy without any technical difficulties.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h3>Quick Sharing</h3>
+                    <p>Share photos instantly via QR code, WhatsApp, or get high-quality printouts on the spot.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3>Personalized Experience</h3>
+                    <p>Add logos, event details, and custom frames for perfect branding and event integration.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Group Fun</h3>
+                    <p>Perfect for group photos with friends, family, or colleagues at any special occasion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Features & Pricing</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="pricing-plans">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-name">WALL MOUNTED</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Kids - Solo photo creation</li>
+                        <li><i class="fas fa-check"></i> Adults - Solo photo creation</li>
+                        <li><i class="fas fa-check"></i> Simple QR download</li>
+                        <li><i class="fas fa-check"></i> Templates - 5</li>
+                        <li><i class="fas fa-check"></i> Speed 50 per hour</li>
+                        <li><i class="fas fa-check"></i> External printer connect option</li>
+                    </ul>
+                    <div class="pricing-cta">
+                        <a href="#contact" class="btn-secondary">Contact for Pricing</a>
+                    </div>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-header">
+                        <div class="pricing-name">SINGLE</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> All Wall Mount plan features</li>
+                        <li><i class="fas fa-check"></i> Group photo creation</li>
+                        <li><i class="fas fa-check"></i> Celebrity / Person photo creation</li>
+                        <li><i class="fas fa-check"></i> Multi theme selection</li>
+                        <li><i class="fas fa-check"></i> Templates - 10 + custom template</li>
+                        <li><i class="fas fa-check"></i> Speed 60 per hour</li>
+                        <li><i class="fas fa-check"></i> Dual Camera</li>
+                        <li><i class="fas fa-check"></i> WhatsApp QR download</li>
+                        <li><i class="fas fa-check"></i> User Data Collection (mobile / name / age / gender)</li>
+                        <li><i class="fas fa-check"></i> Custom welcome message</li>
+                        <li><i class="fas fa-check"></i> 2000 free photos</li>
+                    </ul>
+                    <div class="pricing-cta">
+                        <a href="#contact" class="btn-primary">Contact for Pricing</a>
+                    </div>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-name">DUAL</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> All Single Plan features</li>
+                        <li><i class="fas fa-check"></i> Dual Screen System</li>
+                        <li><i class="fas fa-check"></i> Speed 120 per hour</li>
+                        <li><i class="fas fa-check"></i> Robotic head design</li>
+                        <li><i class="fas fa-check"></i> Digital Signage</li>
+                        <li><i class="fas fa-check"></i> Add Screen Customization</li>
+                        <li><i class="fas fa-check"></i> Post Content / Message pushing for branding</li>
+                        <li><i class="fas fa-check"></i> Live Feed of device</li>
+                        <li><i class="fas fa-check"></i> 5000 free photos</li>
+                    </ul>
+                    <div class="pricing-cta">
+                        <a href="#contact" class="btn-secondary">Contact for Pricing</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="addons-section">
+                <h3>ADD ONS</h3>
+                <table class="addons-table">
+                    <tr>
+                        <td>Custom Theme</td>
+                        <td>1,500 per theme</td>
+                    </tr>
+                    <tr>
+                        <td>Printer (as per model)</td>
+                        <td>Contact for pricing</td>
+                    </tr>
+                    <tr>
+                        <td>Payment Gateway Integration</td>
+                        <td>50,000</td>
+                    </tr>
+                    <tr>
+                        <td>Robotic Head</td>
+                        <td>15,000</td>
+                    </tr>
+                    <tr>
+                        <td>External Light Setup</td>
+                        <td>5,000</td>
+                    </tr>
+                    <tr>
+                        <td>AMC</td>
+                        <td>20,000 per year</td>
+                    </tr>
+                </table>
+                <div class="addons-note">
+                    <p>***Cloud Pricing - Rs 25 per photo</p>
+                    <p>***GST excluded</p>
+                </div>
+                <a href="https://maayaistorage.blob.core.windows.net/niaa/catalogue.pdf" target="_blank" class="catalogue-link">Please checkout the complete catalogue here</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Gallery</h2>
+                <div class="underline"></div>
+                <p>Explore our collection of AI-enhanced photos that showcase the magic of Niaa.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="text">
+                            <h3>Address</h3>
+                            <p>Building No/Flat No: 488/2, Trichy Road Singanallur, Coimbatore, Tamil Nadu - 641005</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="text">
+                            <h3>Phone</h3>
+                            <p><a href="tel:+919043500128">+91 90435 00128</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="text">
+                            <h3>Email</h3>
+                            <p><a href="mailto:contact@aisolutions.ai">contact@aisolutions.ai</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.svg" alt="AI Solutions Logo">
+                    <p>Redefining Reality through Artificial Intelligence</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AI Solutions. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
