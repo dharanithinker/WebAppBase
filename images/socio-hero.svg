@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <!-- Background with gradient -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4361ee" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#7209b7" stop-opacity="0.2"/>
+    </linearGradient>
+    
+    <!-- Glow effects -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    
+    <!-- Data Pattern -->
+    <pattern id="data-pattern" patternUnits="userSpaceOnUse" width="20" height="20">
+      <path d="M0,10 L20,10" stroke="#4361ee" stroke-width="0.5" stroke-opacity="0.3"/>
+      <path d="M10,0 L10,20" stroke="#4361ee" stroke-width="0.5" stroke-opacity="0.3"/>
+    </pattern>
+    
+    <!-- Post Template Pattern -->
+    <pattern id="post-pattern" patternUnits="userSpaceOnUse" width="50" height="50">
+      <rect width="50" height="50" fill="#ffffff" stroke="#dddddd" stroke-width="1"/>
+      <rect x="5" y="5" width="40" height="25" fill="#f0f0f0"/>
+      <rect x="5" y="35" width="25" height="3" fill="#dddddd"/>
+      <rect x="5" y="42" width="40" height="3" fill="#dddddd"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background rectangle -->
+  <rect width="800" height="600" fill="url(#bg-gradient)"/>
+  
+  <!-- Decorative circuit elements -->
+  <g class="circuit-elements" opacity="0.15">
+    <path d="M100,300 C150,250 200,350 250,300" stroke="#4361ee" stroke-width="2" fill="none"/>
+    <path d="M500,200 C550,150 600,250 650,200" stroke="#4361ee" stroke-width="2" fill="none"/>
+    <path d="M150,150 L200,150" stroke="#4361ee" stroke-width="1.5"/>
+    <path d="M600,400 L650,400" stroke="#4361ee" stroke-width="1.5"/>
+    <circle cx="150" cy="150" r="3" fill="#4361ee"/>
+    <circle cx="200" cy="150" r="3" fill="#4361ee"/>
+    <circle cx="600" cy="400" r="3" fill="#4361ee"/>
+    <circle cx="650" cy="400" r="3" fill="#4361ee"/>
+    
+    <!-- Data flow lines -->
+    <g opacity="0.6">
+      <path d="M400,100 Q450,150 500,100" stroke="#7209b7" stroke-width="1" stroke-dasharray="4 2"/>
+      <path d="M300,500 Q350,450 400,500" stroke="#7209b7" stroke-width="1" stroke-dasharray="4 2"/>
+      <path d="M150,400 Q200,350 250,400" stroke="#7209b7" stroke-width="1" stroke-dasharray="4 2"/>
+      <path d="M550,300 Q600,250 650,300" stroke="#7209b7" stroke-width="1" stroke-dasharray="4 2"/>
+    </g>
+  </g>
+  
+  <!-- Central AI Hub -->
+  <g class="ai-hub" filter="url(#glow)" transform="translate(400, 300)">
+    <!-- Central Core -->
+    <circle cx="0" cy="0" r="60" fill="#4361ee" opacity="0.7"/>
+    <circle cx="0" cy="0" r="50" fill="url(#data-pattern)" stroke="#7209b7" stroke-width="2"/>
+    
+    <!-- AI Core Animation -->
+    <circle cx="0" cy="0" r="40" fill="none" stroke="#7209b7" stroke-width="3" opacity="0.5">
+      <animate attributeName="r" values="40;45;40" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0.8;0.5" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- AI Brain Icon -->
+    <g transform="translate(-25, -25)">
+      <path d="M25,0 L40,0 L50,25 L40,50 L25,50 L15,25 Z" fill="#7209b7" opacity="0.9"/>
+      <path d="M25,10 L35,10 L42,25 L35,40 L25,40 L18,25 Z" fill="#ffffff" opacity="0.7"/>
+      <circle cx="30" cy="25" r="5" fill="#4361ee"/>
+    </g>
+    
+    <!-- Connection Nodes -->
+    <circle cx="0" cy="-60" r="5" fill="#4361ee" opacity="0.8">
+      <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="60" cy="0" r="5" fill="#4361ee" opacity="0.8">
+      <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    <circle cx="0" cy="60" r="5" fill="#4361ee" opacity="0.8">
+      <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    <circle cx="-60" cy="0" r="5" fill="#4361ee" opacity="0.8">
+      <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite" begin="1.5s"/>
+    </circle>
+    <circle cx="-42" cy="-42" r="5" fill="#4361ee" opacity="0.8">
+      <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite" begin="0.25s"/>
+    </circle>
+    <circle cx="42" cy="-42" r="5" fill="#4361ee" opacity="0.8">
+      <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite" begin="0.75s"/>
+    </circle>
+    <circle cx="42" cy="42" r="5" fill="#4361ee" opacity="0.8">
+      <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite" begin="1.25s"/>
+    </circle>
+    <circle cx="-42" cy="42" r="5" fill="#4361ee" opacity="0.8">
+      <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite" begin="1.75s"/>
+    </circle>
+  </g>
+  
+  <!-- Social Media Platforms Orbiting -->
+  <g class="social-platforms">
+    <!-- Facebook -->
+    <g transform="translate(400, 300)" class="platform facebook">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        from="0 400 300" 
+        to="360 400 300" 
+        dur="20s" 
+        repeatCount="indefinite"/>
+      <g transform="translate(0, -150)">
+        <circle cx="0" cy="0" r="25" fill="#ffffff" stroke="#dddddd" stroke-width="1"/>
+        <path d="M10,-10 L-5,-10 L-5,5 L10,5 L10,15 L-5,15 L-5,30 L-15,30 L-15,-20 L10,-20 Z" fill="#1877F2"/>
+      </g>
+    </g>
+    
+    <!-- Instagram -->
+    <g transform="translate(400, 300)" class="platform instagram">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        from="45 400 300" 
+        to="405 400 300" 
+        dur="25s" 
+        repeatCount="indefinite"/>
+      <g transform="translate(106, -106)">
+        <circle cx="0" cy="0" r="25" fill="#ffffff" stroke="#dddddd" stroke-width="1"/>
+        <rect x="-15" y="-15" width="30" height="30" rx="8" fill="#E4405F"/>
+        <circle cx="0" cy="0" r="7" fill="none" stroke="#ffffff" stroke-width="2"/>
+        <circle cx="9" cy="-9" r="2" fill="#ffffff"/>
+      </g>
+    </g>
+    
+    <!-- Twitter -->
+    <g transform="translate(400, 300)" class="platform twitter">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        from="90 400 300" 
+        to="450 400 300" 
+        dur="22s" 
+        repeatCount="indefinite"/>
+      <g transform="translate(150, 0)">
+        <circle cx="0" cy="0" r="25" fill="#ffffff" stroke="#dddddd" stroke-width="1"/>
+        <path d="M-15,-10 C-10,-15 -5,-15 0,-10 C5,-15 10,-15 15,-10 C15,-5 15,0 10,5 C15,10 15,15 15,15 L5,10 C0,15 -5,15 -10,10 C-15,5 -15,0 -15,-5 Z" fill="#1DA1F2"/>
+      </g>
+    </g>
+    
+    <!-- LinkedIn -->
+    <g transform="translate(400, 300)" class="platform linkedin">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        from="135 400 300" 
+        to="495 400 300" 
+        dur="28s" 
+        repeatCount="indefinite"/>
+      <g transform="translate(106, 106)">
+        <circle cx="0" cy="0" r="25" fill="#ffffff" stroke="#dddddd" stroke-width="1"/>
+        <rect x="-15" y="-15" width="30" height="30" rx="4" fill="#0A66C2"/>
+        <rect x="-10" y="-10" width="5" height="5" fill="#ffffff"/>
+        <rect x="-10" y="0" width="5" height="10" fill="#ffffff"/>
+        <path d="M0,0 L0,10 L10,10 L10,0 Z" fill="#ffffff"/>
+        <path d="M0,0 C0,-5 5,-5 5,0 L5,0 L5,0 Z" fill="#ffffff"/>
+      </g>
+    </g>
+    
+    <!-- YouTube -->
+    <g transform="translate(400, 300)" class="platform youtube">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        from="180 400 300" 
+        to="540 400 300" 
+        dur="24s" 
+        repeatCount="indefinite"/>
+      <g transform="translate(0, 150)">
+        <circle cx="0" cy="0" r="25" fill="#ffffff" stroke="#dddddd" stroke-width="1"/>
+        <rect x="-15" y="-10" width="30" height="20" rx="5" fill="#FF0000"/>
+        <polygon points="0,0 -5,-5 -5,5" fill="#ffffff" transform="translate(5, 0)"/>
+      </g>
+    </g>
+    
+    <!-- Pinterest -->
+    <g transform="translate(400, 300)" class="platform pinterest">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        from="225 400 300" 
+        to="585 400 300" 
+        dur="26s" 
+        repeatCount="indefinite"/>
+      <g transform="translate(-106, 106)">
+        <circle cx="0" cy="0" r="25" fill="#ffffff" stroke="#dddddd" stroke-width="1"/>
+        <circle cx="0" cy="0" r="15" fill="#E60023"/>
+        <circle cx="0" cy="-5" r="5" fill="#ffffff"/>
+        <rect x="-2" y="0" width="4" height="10" fill="#ffffff"/>
+      </g>
+    </g>
+    
+    <!-- TikTok -->
+    <g transform="translate(400, 300)" class="platform tiktok">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        from="270 400 300" 
+        to="630 400 300" 
+        dur="23s" 
+        repeatCount="indefinite"/>
+      <g transform="translate(-150, 0)">
+        <circle cx="0" cy="0" r="25" fill="#ffffff" stroke="#dddddd" stroke-width="1"/>
+        <rect x="-10" y="-15" width="5" height="30" fill="#000000"/>
+        <rect x="5" y="-15" width="5" height="30" fill="#000000"/>
+        <path d="M-10,-5 C-10,-10 -5,-15 0,-15 C5,-15 10,-10 10,-5 L10,5 C10,10 5,15 0,15 C-5,15 -10,10 -10,5 Z" fill="#00f2ea" stroke="#000000" stroke-width="1"/>
+      </g>
+    </g>
+    
+    <!-- Snapchat -->
+    <g transform="translate(400, 300)" class="platform snapchat">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        from="315 400 300" 
+        to="675 400 300" 
+        dur="27s" 
+        repeatCount="indefinite"/>
+      <g transform="translate(-106, -106)">
+        <circle cx="0" cy="0" r="25" fill="#ffffff" stroke="#dddddd" stroke-width="1"/>
+        <path d="M0,-10 C5,-10 10,-5 10,0 L10,5 C10,5 10,10 15,10 L15,15 L10,15 C10,20 5,20 0,20 C-5,20 -10,20 -10,15 L-15,15 L-15,10 C-10,10 -10,5 -10,5 L-10,0 C-10,-5 -5,-10 0,-10 Z" fill="#FFFC00"/>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Social Media Posts -->
+  <g class="social-posts">
+    <!-- Post 1 - Being Created -->
+    <g transform="translate(200, 150)" class="post" filter="url(#glow)">
+      <!-- Post Container -->
+      <rect x="-40" y="-60" width="80" height="120" rx="5" fill="#ffffff" stroke="#4361ee" stroke-width="1"/>
+      
+      <!-- Post Header -->
+      <rect x="-40" y="-60" width="80" height="20" rx="5" fill="#4361ee"/>
+      <circle cx="-25" cy="-50" r="5" fill="#ffffff"/>
+      <rect x="-15" y="-55" width="30" height="4" rx="2" fill="#ffffff"/>
+      <rect x="-15" y="-45" width="20" height="3" rx="1.5" fill="#ffffff"/>
+      
+      <!-- Post Image -->
+      <rect x="-35" y="-35" width="70" height="50" fill="#f0f0f0"/>
+      <circle cx="0" cy="-10" r="15" fill="#7209b7" opacity="0.3"/>
+      <rect x="-20" y="-20" width="40" height="3" rx="1.5" fill="#dddddd"/>
+      <rect x="-15" y="-15" width="30" height="3" rx="1.5" fill="#dddddd"/>
+      <rect x="-25" y="-10" width="50" height="3" rx="1.5" fill="#dddddd"/>
+      <rect x="-20" y="-5" width="40" height="3" rx="1.5" fill="#dddddd"/>
+      
+      <!-- Post Footer -->
+      <rect x="-35" y="20" width="20" height="5" rx="2.5" fill="#4361ee" opacity="0.7"/>
+      <rect x="-10" y="20" width="20" height="5" rx="2.5" fill="#4361ee" opacity="0.7"/>
+      <rect x="15" y="20" width="20" height="5" rx="2.5" fill="#4361ee" opacity="0.7"/>
+      
+      <!-- Post Stats -->
+      <rect x="-35" y="30" width="70" height="1" fill="#dddddd"/>
+      <rect x="-35" y="35" width="15" height="3" rx="1.5" fill="#dddddd"/>
+      <rect x="-15" y="35" width="15" height="3" rx="1.5" fill="#dddddd"/>
+      <rect x="5" y="35" width="15" height="3" rx="1.5" fill="#dddddd"/>
+      <rect x="25" y="35" width="10" height="3" rx="1.5" fill="#dddddd"/>
+      
+      <!-- Post Comments -->
+      <rect x="-35" y="45" width="70" height="1" fill="#dddddd"/>
+      <circle cx="-30" cy="50" r="3" fill="#f0f0f0"/>
+      <rect x="-25" y="48" width="60" height="3" rx="1.5" fill="#f0f0f0"/>
+      
+      <!-- AI Creation Animation -->
+      <rect x="-40" y="-60" width="80" height="120" fill="url(#data-pattern)" opacity="0.1"/>
+      <rect x="-40" y="-60" width="80" height="120" rx="5" stroke="#7209b7" stroke-width="1" stroke-dasharray="5 3" opacity="0.7" fill="none">
+        <animate attributeName="stroke-dashoffset" values="8;0" dur="3s" repeatCount="indefinite"/>
+      </rect>
+      
+      <!-- AI Processing Points -->
+      <circle cx="-20" cy="-20" r="3" fill="#7209b7" opacity="0.8">
+        <animate attributeName="r" values="2;4;2" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="20" cy="-20" r="3" fill="#7209b7" opacity="0.8">
+        <animate attributeName="r" values="2;4;2" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+      </circle>
+      <circle cx="0" cy="20" r="3" fill="#7209b7" opacity="0.8">
+        <animate attributeName="r" values="2;4;2" dur="2s" repeatCount="indefinite" begin="1s"/>
+      </circle>
+    </g>
+    
+    <!-- Post 2 - Being Analyzed -->
+    <g transform="translate(600, 150)" class="post" filter="url(#glow)">
+      <!-- Post Container -->
+      <rect x="-40" y="-60" width="80" height="120" rx="5" fill="#ffffff" stroke="#7209b7" stroke-width="1"/>
+      
+      <!-- Post Header -->
+      <rect x="-40" y="-60" width="80" height="20" rx="5" fill="#7209b7"/>
+      <circle cx="-25" cy="-50" r="5" fill="#ffffff"/>
+      <rect x="-15" y="-55" width="30" height="4" rx="2" fill="#ffffff"/>
+      <rect x="-15" y="-45" width="20" height="3" rx="1.5" fill="#ffffff"/>
+      
+      <!-- Post Content -->
+      <rect x="-35" y="-35" width="70" height="70" fill="#f0f0f0"/>
+      
+      <!-- Analytics Overlay -->
+      <g class="analytics-overlay">
+        <!-- Bar Chart -->
+        <rect x="-30" y="-30" width="10" height="40" fill="#4361ee" opacity="0.5"/>
+        <rect x="-15" y="-20" width="10" height="30" fill="#4361ee" opacity="0.5"/>
+        <rect x="0" y="-25" width="10" height="35" fill="#4361ee" opacity="0.5"/>
+        <rect x="15" y="-15" width="10" height="25" fill="#4361ee" opacity="0.5"/>
+        
+        <!-- Target Audience Circles -->
+        <circle cx="-25" cy="0" r="10" fill="#7209b7" opacity="0.3"/>
+        <circle cx="0" cy="5" r="15" fill="#7209b7" opacity="0.2"/>
+        <circle cx="20" cy="-5" r="8" fill="#7209b7" opacity="0.4"/>
+      </g>
+      
+      <!-- Post Stats -->
+      <rect x="-35" y="40" width="70" height="1" fill="#dddddd"/>
+      <rect x="-35" y="45" width="15" height="3" rx="1.5" fill="#dddddd"/>
+      <rect x="-15" y="45" width="15" height="3" rx="1.5" fill="#dddddd"/>
+      <rect x="5" y="45" width="15" height="3" rx="1.5" fill="#dddddd"/>
+      <rect x="25" y="45" width="10" height="3" rx="1.5" fill="#dddddd"/>
+      
+      <!-- AI Analysis Animation -->
+      <rect x="-40" y="-60" width="80" height="120" fill="url(#data-pattern)" opacity="0.1"/>
+      <rect x="-40" y="-60" width="80" height="120" rx="5" stroke="#4361ee" stroke-width="1" stroke-dasharray="5 3" opacity="0.7" fill="none">
+        <animate attributeName="stroke-dashoffset" values="8;0" dur="3s" repeatCount="indefinite"/>
+      </rect>
+      
+      <!-- Data Points -->
+      <circle cx="-25" cy="-10" r="3" fill="#4361ee" opacity="0.8">
+        <animate attributeName="r" values="2;4;2" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="10" cy="0" r="3" fill="#4361ee" opacity="0.8">
+        <animate attributeName="r" values="2;4;2" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+      </circle>
+      <circle cx="-10" cy="20" r="3" fill="#4361ee" opacity="0.8">
+        <animate attributeName="r" values="2;4;2" dur="2s" repeatCount="indefinite" begin="1s"/>
+      </circle>
+    </g>
+    
+    <!-- Post 3 - Scheduling -->
+    <g transform="translate(200, 450)" class="post" filter="url(#glow)">
+      <!-- Post Container -->
+      <rect x="-40" y="-60" width="80" height="120" rx="5" fill="#ffffff" stroke="#4361ee" stroke-width="1"/>
+      
+      <!-- Post Header -->
+      <rect x="-40" y="-60" width="80" height="20" rx="5" fill="#4361ee"/>
+      <circle cx="-25" cy="-50" r="5" fill="#ffffff"/>
+      <rect x="-15" y="-55" width="30" height="4" rx="2" fill="#ffffff"/>
+      <rect x="-15" y="-45" width="20" height="3" rx="1.5" fill="#ffffff"/>
+      
+      <!-- Calendar View -->
+      <rect x="-35" y="-35" width="70" height="70" fill="#f0f0f0"/>
+      
+      <!-- Calendar Grid -->
+      <g class="calendar-grid">
+        <rect x="-35" y="-35" width="70" height="10" fill="#dddddd"/>
+        <line x1="-35" y1="-25" x2="35" y2="-25" stroke="#dddddd" stroke-width="1"/>
+        <line x1="-35" y1="-15" x2="35" y2="-15" stroke="#dddddd" stroke-width="1"/>
+        <line x1="-35" y1="-5" x2="35" y2="-5" stroke="#dddddd" stroke-width="1"/>
+        <line x1="-35" y1="5" x2="35" y2="5" stroke="#dddddd" stroke-width="1"/>
+        <line x1="-35" y1="15" x2="35" y2="15" stroke="#dddddd" stroke-width="1"/>
+        <line x1="-35" y1="25" x2="35" y2="25" stroke="#dddddd" stroke-width="1"/>
+        
+        <line x1="-25" y1="-35" x2="-25" y2="35" stroke="#dddddd" stroke-width="1"/>
+        <line x1="-15" y1="-35" x2="-15" y2="35" stroke="#dddddd" stroke-width="1"/>
+        <line x1="-5" y1="-35" x2="-5" y2="35" stroke="#dddddd" stroke-width="1"/>
+        <line x1="5" y1="-35" x2="5" y2="35" stroke="#dddddd" stroke-width="1"/>
+        <line x1="15" y1="-35" x2="15" y2="35" stroke="#dddddd" stroke-width="1"/>
+        <line x1="25" y1="-35" x2="25" y2="35" stroke="#dddddd" stroke-width="1"/>
+      </g>
+      
+      <!-- Scheduled Posts -->
+      <rect x="-34" y="-24" width="8" height="8" rx="1" fill="#7209b7" opacity="0.7"/>
+      <rect x="-14" y="-14" width="8" height="8" rx="1" fill="#7209b7" opacity="0.7"/>
+      <rect x="6" y="-4" width="8" height="8" rx="1" fill="#7209b7" opacity="0.7"/>
+      <rect x="26" y="6" width="8" height="8" rx="1" fill="#7209b7" opacity="0.7"/>
+      <rect x="-24" y="16" width="8" height="8" rx="1" fill="#7209b7" opacity="0.7"/>
+      <rect x="-4" y="26" width="8" height="8" rx="1" fill="#4361ee" opacity="0.7">
+        <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+      </rect>
+      
+      <!-- Post Stats -->
+      <rect x="-35" y="40" width="70" height="1" fill="#dddddd"/>
+      <rect x="-35" y="45" width="15" height="3" rx="1.5" fill="#dddddd"/>
+      <rect x="-15" y="45" width="15" height="3" rx="1.5" fill="#dddddd"/>
+      <rect x="5" y="45" width="15" height="3" rx="1.5" fill="#dddddd"/>
+      <rect x="25" y="45" width="10" height="3" rx="1.5" fill="#dddddd"/>
+      
+      <!-- AI Scheduling Animation -->
+      <rect x="-40" y="-60" width="80" height="120" fill="url(#data-pattern)" opacity="0.1"/>
+      <rect x="-40" y="-60" width="80" height="120" rx="5" stroke="#7209b7" stroke-width="1" stroke-dasharray="5 3" opacity="0.7" fill="none">
+        <animate attributeName="stroke-dashoffset" values="8;0" dur="3s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+    
+    <!-- Post 4 - Analytics Dashboard -->
+    <g transform="translate(600, 450)" class="post" filter="url(#glow)">
+      <!-- Post Container -->
+      <rect x="-40" y="-60" width="80" height="120" rx="5" fill="#ffffff" stroke="#7209b7" stroke-width="1"/>
+      
+      <!-- Dashboard Header -->
+      <rect x="-40" y="-60" width="80" height="20" rx="5" fill="#7209b7"/>
+      <text x="-20" y="-45" font-family="Arial" font-size="8" fill="#ffffff">ANALYTICS</text>
+      
+      <!-- Dashboard Content -->
+      <rect x="-35" y="-35" width="70" height="70" fill="#f0f0f0"/>
+      
+      <!-- Line Chart -->
+      <polyline points="-30,-20 -20,-15 -10,-25 0,-10 10,-15 20,-5 30,-15" 
+                stroke="#4361ee" stroke-width="2" fill="none"/>
+      
+      <!-- Bar Chart -->
+      <rect x="-30" y="5" width="8" height="15" fill="#7209b7" opacity="0.7"/>
+      <rect x="-20" y="0" width="8" height="20" fill="#7209b7" opacity="0.7"/>
+      <rect x="-10" y="10" width="8" height="10" fill="#7209b7" opacity="0.7"/>
+      <rect x="0" y="-5" width="8" height="25" fill="#7209b7" opacity="0.7"/>
+      <rect x="10" y="5" width="8" height="15" fill="#7209b7" opacity="0.7"/>
+      <rect x="20" y="-10" width="8" height="30" fill="#7209b7" opacity="0.7"/>
+      
+      <!-- Pie Chart -->
+      <circle cx="0" cy="-15" r="10" fill="none" stroke="#dddddd" stroke-width="1"/>
+      <path d="M 0 -15 L 0 -25 A 10 10 0 0 1 8.66 -10 Z" fill="#4361ee" opacity="0.7"/>
+      <path d="M 0 -15 L 8.66 -10 A 10 10 0 0 1 -8.66 -10 Z" fill="#7209b7" opacity="0.7"/>
+      <path d="M 0 -15 L -8.66 -10 A 10 10 0 0 1 0 -25 Z" fill="#560bad" opacity="0.7"/>
+      
+      <!-- Stats Indicators -->
+      <rect x="-35" y="30" width="15" height="3" rx="1.5" fill="#dddddd"/>
+      <rect x="-15" y="30" width="15" height="3" rx="1.5" fill="#dddddd"/>
+      <rect x="5" y="30" width="15" height="3" rx="1.5" fill="#dddddd"/>
+      <rect x="25" y="30" width="10" height="3" rx="1.5" fill="#dddddd"/>
+      
+      <!-- AI Analysis Animation -->
+      <rect x="-40" y="-60" width="80" height="120" fill="url(#data-pattern)" opacity="0.1"/>
+      <rect x="-40" y="-60" width="80" height="120" rx="5" stroke="#4361ee" stroke-width="1" stroke-dasharray="5 3" opacity="0.7" fill="none">
+        <animate attributeName="stroke-dashoffset" values="8;0" dur="3s" repeatCount="indefinite"/>
+      </rect>
+      
+      <!-- Data Points -->
+      <circle cx="-20" cy="-15" r="2" fill="#4361ee">
+        <animate attributeName="r" values="2;3;2" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="0" cy="-10" r="2" fill="#4361ee">
+        <animate attributeName="r" values="2;3;2" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+      </circle>
+      <circle cx="20" cy="-5" r="2" fill="#4361ee">
+        <animate attributeName="r" values="2;3;2" dur="2s" repeatCount="indefinite" begin="1s"/>
+      </circle>
+    </g>
+  </g>
+  
+  <!-- Data Flow Connections -->
+  <g class="data-connections">
+    <!-- Post 1 to AI Core -->
+    <path d="M200,150 Q300,225 400,300" stroke="#4361ee" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.7">
+      <animate attributeName="stroke-dashoffset" values="8;0" dur="3s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Post 2 to AI Core -->
+    <path d="M600,150 Q500,225 400,300" stroke="#4361ee" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.7">
+      <animate attributeName="stroke-dashoffset" values="8;0" dur="3s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Post 3 to AI Core -->
+    <path d="M200,450 Q300,375 400,300" stroke="#4361ee" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.7">
+      <animate attributeName="stroke-dashoffset" values="8;0" dur="3s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Post 4 to AI Core -->
+    <path d="M600,450 Q500,375 400,300" stroke="#4361ee" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.7">
+      <animate attributeName="stroke-dashoffset" values="8;0" dur="3s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- AI Core to Social Platforms -->
+    <path d="M400,240 L400,150" stroke="#7209b7" stroke-width="1" stroke-dasharray="5 3" opacity="0.5">
+      <animate attributeName="stroke-dashoffset" values="8;0" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M460,300 L550,300" stroke="#7209b7" stroke-width="1" stroke-dasharray="5 3" opacity="0.5">
+      <animate attributeName="stroke-dashoffset" values="8;0" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M400,360 L400,450" stroke="#7209b7" stroke-width="1" stroke-dasharray="5 3" opacity="0.5">
+      <animate attributeName="stroke-dashoffset" values="8;0" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M340,300 L250,300" stroke="#7209b7" stroke-width="1" stroke-dasharray="5 3" opacity="0.5">
+      <animate attributeName="stroke-dashoffset" values="8;0" dur="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Floating UI Elements -->
+  <g class="ui-elements" opacity="0.9">
+    <!-- Content Generator Button -->
+    <g transform="translate(300, 200)">
+      <rect x="-40" y="-15" width="80" height="30" rx="15" fill="#ffffff" stroke="#4361ee" stroke-width="1"/>
+      <text x="-30" y="5" font-family="Arial" font-size="10" fill="#4361ee">GENERATE</text>
+      <circle cx="20" cy="0" r="10" fill="#4361ee"/>
+      <path d="M15,0 L25,0 M20,-5 L20,5" stroke="#ffffff" stroke-width="2"/>
+    </g>
+    
+    <!-- Schedule Selector -->
+    <g transform="translate(300, 400)">
+      <rect x="-40" y="-15" width="80" height="30" rx="5" fill="#ffffff" stroke="#4361ee" stroke-width="1"/>
+      <text x="-30" y="5" font-family="Arial" font-size="10" fill="#4361ee">SCHEDULE</text>
+      <rect x="15" y="-5" width="15" height="10" rx="2" fill="#4361ee"/>
+      <path d="M18,0 L27,0" stroke="#ffffff" stroke-width="1"/>
+    </g>
+    
+    <!-- Analytics Toggle -->
+    <g transform="translate(500, 200)">
+      <rect x="-40" y="-15" width="80" height="30" rx="15" fill="#ffffff" stroke="#7209b7" stroke-width="1"/>
+      <text x="-30" y="5" font-family="Arial" font-size="10" fill="#7209b7">ANALYTICS</text>
+      <circle cx="20" cy="0" r="10" fill="#7209b7"/>
+      <circle cx="20" cy="0" r="4" fill="#ffffff"/>
+    </g>
+    
+    <!-- Platform Selector -->
+    <g transform="translate(500, 400)">
+      <rect x="-40" y="-15" width="80" height="30" rx="5" fill="#ffffff" stroke="#7209b7" stroke-width="1"/>
+      <text x="-30" y="5" font-family="Arial" font-size="10" fill="#7209b7">PLATFORMS</text>
+      <path d="M15,-5 L25,0 L15,5 Z" fill="#7209b7"/>
+    </g>
+  </g>
+  
+  <!-- Animated Processing Indicators -->
+  <g class="processing-indicators">
+    <circle cx="200" cy="150" r="5" fill="#4361ee" opacity="0.6">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="150" r="5" fill="#4361ee" opacity="0.6">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    <circle cx="200" cy="450" r="5" fill="#4361ee" opacity="0.6">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="2s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    <circle cx="600" cy="450" r="5" fill="#4361ee" opacity="0.6">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="2s" repeatCount="indefinite" begin="1.5s"/>
+    </circle>
+  </g>
+</svg>

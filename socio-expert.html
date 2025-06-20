@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Socio Expert - Smart Social Media Marketing with AI">
+    <title>Socio Expert - Digital Media Marketing | AI Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Socio Expert-specific styles */
+        .hero.socio-hero {
+            background: linear-gradient(135deg, #4361ee, #7209b7);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .feature-card {
+            background-color: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-normal);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .feature-icon {
+            width: 7rem;
+            height: 7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-md);
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            color: var(--white);
+        }
+        
+        .feature-icon i {
+            font-size: 2.8rem;
+        }
+        
+        .social-platforms {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .platform-icon {
+            width: 5rem;
+            height: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--white);
+            border-radius: 50%;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-normal);
+        }
+        
+        .platform-icon:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .platform-icon i {
+            font-size: 2.4rem;
+            color: var(--primary-color);
+        }
+        
+        .platform-icon.facebook i {
+            color: #1877F2;
+        }
+        
+        .platform-icon.instagram i {
+            color: #E4405F;
+        }
+        
+        .platform-icon.twitter i {
+            color: #1DA1F2;
+        }
+        
+        .platform-icon.linkedin i {
+            color: #0A66C2;
+        }
+        
+        .platform-icon.youtube i {
+            color: #FF0000;
+        }
+        
+        .platform-icon.pinterest i {
+            color: #E60023;
+        }
+        
+        .cta-section {
+            margin-top: var(--spacing-xl);
+            text-align: center;
+            padding: var(--spacing-xl) 0;
+            background-color: var(--bg-color);
+            border-radius: var(--radius-lg);
+        }
+        
+        .cta-section h3 {
+            font-size: 2.4rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--dark);
+        }
+        
+        @media (min-width: 768px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.svg" alt="AI Solutions Logo" id="logo-img">
+                <h1>AI Solutions</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero socio-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Smart Social Media Marketing with AI</h1>
+                <p>Welcome to Socio Expert, your intelligent solution for digital media marketing. We help your brand shine with engaging, data-driven content.</p>
+                <a href="#contact" class="btn-primary">Get Started</a>
+            </div>
+            <div class="hero-image">
+                <img src="images/socio-hero.svg" alt="Socio Expert AI Social Media Marketing">
+            </div>
+        </div>
+    </section>
+
+    <section id="about-socio" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>What We Do</h2>
+                <div class="underline"></div>
+                <p>Our AI-powered platform offers everything you need to excel in digital marketing and social media.</p>
+            </div>
+            <div class="social-platforms">
+                <div class="platform-icon facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </div>
+                <div class="platform-icon instagram">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <div class="platform-icon twitter">
+                    <i class="fab fa-twitter"></i>
+                </div>
+                <div class="platform-icon linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+                <div class="platform-icon youtube">
+                    <i class="fab fa-youtube"></i>
+                </div>
+                <div class="platform-icon pinterest">
+                    <i class="fab fa-pinterest-p"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <h3>Automated Social Media Posts</h3>
+                    <p>Generate captivating content in seconds with our AI-powered content creation engine.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>AI-Powered Graphic Design</h3>
+                    <p>Create stunning visuals for your brand without needing design expertise.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Data-Driven Strategies</h3>
+                    <p>Boost engagement with AI-optimized posts based on performance analytics.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Scheduled Posting</h3>
+                    <p>Plan and automate your content calendar for consistent brand presence.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-analytics"></i>
+                    </div>
+                    <h3>Analytics Tracking</h3>
+                    <p>Monitor your social media performance with comprehensive insights and reports.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h3>Ready to elevate your social media game?</h3>
+            <p>Get in touch with our team today.</p>
+            <a href="#contact" class="btn-primary">Contact Us</a>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="text">
+                            <h3>Email</h3>
+                            <p><a href="mailto:contact@aisolutions.ai">contact@aisolutions.ai</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="text">
+                            <h3>Phone</h3>
+                            <p><a href="tel:+919043500128">+91 90435 00128</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="text">
+                            <h3>Location</h3>
+                            <p>Building No/Flat No : 488/2, Trichy Road Singanallur, Coimbatore, Tamil Nadu - 641005</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.svg" alt="AI Solutions Logo">
+                    <p>Redefining Reality through Artificial Intelligence</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AI Solutions. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
