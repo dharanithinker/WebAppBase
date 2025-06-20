@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="none">
+  <!-- Circuit Background Elements -->
+  <g class="circuit-elements" opacity="0.15">
+    <path d="M10,30 L30,30" stroke="#4361ee" stroke-width="1.5" />
+    <path d="M40,20 L40,40" stroke="#4361ee" stroke-width="1.5" />
+    <path d="M50,30 L70,30" stroke="#4361ee" stroke-width="1.5" />
+    <circle cx="30" cy="30" r="3" fill="#4361ee" />
+    <circle cx="40" cy="20" r="2" fill="#7209b7" />
+    <circle cx="40" cy="40" r="2" fill="#7209b7" />
+    <circle cx="50" cy="30" r="3" fill="#4361ee" />
+    
+    <path d="M130,25 L150,25" stroke="#4361ee" stroke-width="1.5" />
+    <path d="M160,15 L160,35" stroke="#4361ee" stroke-width="1.5" />
+    <path d="M170,25 L190,25" stroke="#4361ee" stroke-width="1.5" />
+    <circle cx="150" cy="25" r="3" fill="#4361ee" />
+    <circle cx="160" cy="15" r="2" fill="#7209b7" />
+    <circle cx="160" cy="35" r="2" fill="#7209b7" />
+    <circle cx="170" cy="25" r="3" fill="#4361ee" />
+  </g>
+  
+  <!-- AI Brain Icon -->
+  <g class="brain-icon">
+    <!-- Brain Outline -->
+    <path d="M30,20 C25,20 20,25 20,30 C20,35 25,40 30,40 C35,40 40,35 40,30 C40,25 35,20 30,20 Z" fill="#3a0ca3" />
+    
+    <!-- Circuit Patterns Inside Brain -->
+    <path d="M25,30 L35,30" stroke="#ffffff" stroke-width="1.5" />
+    <path d="M30,25 L30,35" stroke="#ffffff" stroke-width="1.5" />
+    <path d="M27,27 L33,33" stroke="#ffffff" stroke-width="1.5" />
+    <path d="M27,33 L33,27" stroke="#ffffff" stroke-width="1.5" />
+    
+    <!-- Connection Nodes -->
+    <circle cx="30" cy="30" r="1.5" fill="#7209b7" />
+    <circle cx="25" cy="30" r="1" fill="#ffffff" />
+    <circle cx="35" cy="30" r="1" fill="#ffffff" />
+    <circle cx="30" cy="25" r="1" fill="#ffffff" />
+    <circle cx="30" cy="35" r="1" fill="#ffffff" />
+  </g>
+  
+  <!-- Company Name -->
+  <g class="company-name" fill="#4361ee">
+    <!-- AI -->
+    <path d="M55,23 L60,37 L57,37 L56,34 L51,34 L50,37 L47,37 L52,23 L55,23 Z M55,31 L53.5,27 L52,31 L55,31 Z" />
+    <path d="M63,23 L63,37 L66,37 L66,32 L70,32 L70,29 L66,29 L66,26 L71,26 L71,23 L63,23 Z" />
+    
+    <!-- Solutions -->
+    <path d="M77,26 C76,25 74,25 73,26 C72,27 72,28 73,29 L78,31 C80,32 80,35 78,36 C76,37 73,37 71,35 L73,33 C74,34 76,34 77,33 C78,32 77,31 76,31 L71,29 C69,28 69,25 71,24 C73,23 76,23 78,25 L77,26 Z" />
+    <path d="M87,23 C84,23 82,26 82,30 C82,34 84,37 87,37 C90,37 92,34 92,30 C92,26 90,23 87,23 Z M87,34 C86,34 85,32 85,30 C85,28 86,26 87,26 C88,26 89,28 89,30 C89,32 88,34 87,34 Z" />
+    <path d="M95,23 L95,37 L98,37 L98,23 L95,23 Z" />
+    <path d="M107,23 L107,37 L104,37 L100,29 L100,37 L97,37 L97,23 L100,23 L104,31 L104,23 L107,23 Z" />
+    <path d="M115,26 L112,26 L112,23 L121,23 L121,26 L118,26 L118,37 L115,37 L115,26 Z" />
+    <path d="M123,23 L123,37 L126,37 L126,23 L123,23 Z" />
+    <path d="M135,23 C132,23 130,26 130,30 C130,34 132,37 135,37 C138,37 140,34 140,30 C140,26 138,23 135,23 Z M135,34 C134,34 133,32 133,30 C133,28 134,26 135,26 C136,26 137,28 137,30 C137,32 136,34 135,34 Z" />
+    <path d="M143,23 L143,37 L146,37 L146,32 L148,32 L150,37 L153,37 L151,31 C152,30 153,29 153,27 C153,25 151,23 149,23 L143,23 Z M146,26 L149,26 C150,26 150,27 150,27 C150,28 149,29 148,29 L146,29 L146,26 Z" />
+    <path d="M160,26 C159,25 157,25 156,26 C155,27 155,28 156,29 L161,31 C163,32 163,35 161,36 C159,37 156,37 154,35 L156,33 C157,34 159,34 160,33 C161,32 160,31 159,31 L154,29 C152,28 152,25 154,24 C156,23 159,23 161,25 L160,26 Z" />
+  </g>
+</svg>
