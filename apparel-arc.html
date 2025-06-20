@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apparel Arc - AI Apparel Photography: Empowering Your Apparel Business">
+    <title>Apparel Arc - AI Apparel Photography | AI Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Apparel Arc-specific styles */
+        .hero.apparel-hero {
+            background: linear-gradient(135deg, #3a0ca3, #4361ee);
+        }
+        
+        .offer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .offer-item {
+            background-color: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-normal);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .offer-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .offer-icon {
+            width: 7rem;
+            height: 7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-md);
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            color: var(--white);
+        }
+        
+        .offer-icon i {
+            font-size: 2.8rem;
+        }
+        
+        .upcoming-section {
+            margin-top: var(--spacing-xl);
+            padding: var(--spacing-xl) 0;
+            background-color: var(--bg-color);
+            text-align: center;
+        }
+        
+        .upcoming-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .upcoming-item {
+            display: flex;
+            align-items: center;
+            background-color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-normal);
+        }
+        
+        .upcoming-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .upcoming-item i {
+            margin-right: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .package-plans {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .package-card {
+            background-color: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-normal);
+        }
+        
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .package-header {
+            text-align: center;
+            padding-bottom: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            border-bottom: 1px solid var(--gray-light);
+        }
+        
+        .package-name {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .package-features {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .package-features li {
+            padding: var(--spacing-xs) 0;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .package-features i {
+            color: var(--primary-color);
+            margin-right: var(--spacing-sm);
+            margin-top: 0.4rem;
+        }
+        
+        .package-cta {
+            text-align: center;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .gallery-item {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-normal);
+            position: relative;
+            aspect-ratio: 1 / 1;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-normal);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        @media (min-width: 768px) {
+            .offer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .package-plans {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .offer-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .package-plans {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.svg" alt="AI Solutions Logo" id="logo-img">
+                <h1>AI Solutions</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero apparel-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Empowering Your Apparel Business</h1>
+                <p>Our AI-powered solution transforms your apparel products into stunning, high-quality images without the need for physical photoshoots. Perfect for e-commerce, social media, and marketing.</p>
+                <a href="#contact" class="btn-primary">Get in Touch</a>
+            </div>
+            <div class="hero-image">
+                <img src="images/apparel-hero.svg" alt="Apparel Arc AI Photography">
+            </div>
+        </div>
+    </section>
+
+    <section id="about-apparel" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Who We Are</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Apparel Arc is a cutting-edge company revolutionizing the apparel industry by harnessing the power of artificial intelligence. Our mission is to help businesses stand out with visually stunning content that captures their brand's essence.</p>
+                    <p>We understand the challenges faced by apparel businesses in creating high-quality product imagery. Traditional photoshoots are expensive, time-consuming, and often require significant logistics. Our AI-powered solution eliminates these barriers, allowing you to showcase your products with professional, consistent imagery at a fraction of the cost.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/apparel-about.svg" alt="Apparel Arc AI Photography Example">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>What We Offer</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="offer-grid">
+                <div class="offer-item">
+                    <div class="offer-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Hyper-Realistic Product Photos</h3>
+                    <p>Showcase your apparel with AI-generated model images that look indistinguishable from professional photoshoots.</p>
+                </div>
+                <div class="offer-item">
+                    <div class="offer-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Diverse Model Options</h3>
+                    <p>Choose from various models with customizable poses and styles to perfectly represent your target audience.</p>
+                </div>
+                <div class="offer-item">
+                    <div class="offer-icon">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <h3>Customizable Backgrounds</h3>
+                    <p>Enhance product visuals with tailored backgrounds that complement your brand aesthetic and marketing goals.</p>
+                </div>
+                <div class="offer-item">
+                    <div class="offer-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Fast Turnaround</h3>
+                    <p>Receive high-quality images in record time, allowing you to launch new products quickly and stay ahead of trends.</p>
+                </div>
+                <div class="offer-item">
+                    <div class="offer-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Cost-Effective</h3>
+                    <p>Save significantly on traditional photoshoot costs including models, photographers, studios, and post-production.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="upcoming" class="upcoming-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Upcoming</h2>
+                <div class="underline"></div>
+                <p>We're constantly innovating to bring you more value. Here's what's coming soon:</p>
+            </div>
+            <div class="upcoming-items">
+                <div class="upcoming-item">
+                    <i class="fas fa-film"></i>
+                    <p>Ad Videos</p>
+                </div>
+                <div class="upcoming-item">
+                    <i class="fas fa-vr-cardboard"></i>
+                    <p>Virtual Try-On</p>
+                </div>
+                <div class="upcoming-item">
+                    <i class="fas fa-globe"></i>
+                    <p>Website Creation and Maintenance</p>
+                </div>
+                <div class="upcoming-item">
+                    <i class="fas fa-palette"></i>
+                    <p>Product Designing</p>
+                </div>
+                <div class="upcoming-item">
+                    <i class="fas fa-bullhorn"></i>
+                    <p>Branding and Marketing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Gallery</h2>
+                <div class="underline"></div>
+                <p>Explore a stunning collection of AI-generated apparel photos created with Apparel Arc.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="packages" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Package Plans</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="package-plans">
+                <div class="package-card">
+                    <div class="package-header">
+                        <div class="package-name">Basic</div>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> 4 photos per product</li>
+                        <li><i class="fas fa-check"></i> Plain White Background</li>
+                        <li><i class="fas fa-check"></i> SD Images - in KBs</li>
+                        <li><i class="fas fa-check"></i> Indian AI Models</li>
+                        <li><i class="fas fa-check"></i> Adult AI Models</li>
+                        <li><i class="fas fa-check"></i> Western Wear - T shirt/Shirt/Pant</li>
+                    </ul>
+                    <div class="package-cta">
+                        <a href="#contact" class="btn-secondary">Contact for Pricing</a>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-header">
+                        <div class="package-name">Advance</div>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> 5 photos per product</li>
+                        <li><i class="fas fa-check"></i> Studio/Plain background</li>
+                        <li><i class="fas fa-check"></i> HD image around 2MB</li>
+                        <li><i class="fas fa-check"></i> Indian/International AI Models</li>
+                        <li><i class="fas fa-check"></i> Adults and Kids AI Models</li>
+                        <li><i class="fas fa-check"></i> Add Logo to Images</li>
+                        <li><i class="fas fa-check"></i> Western Wear/ Traditional Wears</li>
+                    </ul>
+                    <div class="package-cta">
+                        <a href="#contact" class="btn-secondary">Contact for Pricing</a>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-header">
+                        <div class="package-name">Pro</div>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Customizable unique 5 photos</li>
+                        <li><i class="fas fa-check"></i> Custom Backgrounds</li>
+                        <li><i class="fas fa-check"></i> UHD image around 5MB</li>
+                        <li><i class="fas fa-check"></i> Indian/International AI Models</li>
+                        <li><i class="fas fa-check"></i> Custom AI Models</li>
+                        <li><i class="fas fa-check"></i> Logo on Images, New Templates</li>
+                        <li><i class="fas fa-check"></i> Western/Traditional/Inner Wear</li>
+                    </ul>
+                    <div class="package-cta">
+                        <a href="#contact" class="btn-primary">Contact for Pricing</a>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-header">
+                        <div class="package-name">Elite</div>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Features as In Premium Package</li>
+                        <li><i class="fas fa-check"></i> Handling Social Media</li>
+                        <li><i class="fas fa-check"></i> Organic Posting in Social media</li>
+                    </ul>
+                    <div class="package-cta">
+                        <a href="#contact" class="btn-secondary">Contact for Pricing</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ready to elevate your fashion brand with stunning visuals?</h2>
+                <div class="underline"></div>
+                <p>Contact us now.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="text">
+                            <h3>Phone</h3>
+                            <p><a href="tel:+918220333238">+91 8220333238</a></p>
+                            <p><a href="tel:+919092994929">+91 9092994929</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="text">
+                            <h3>Email</h3>
+                            <p><a href="mailto:contact@aisolutions.ai">contact@aisolutions.ai</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="text">
+                            <h3>Location</h3>
+                            <p>Coimbatore, Tiruppur</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.svg" alt="AI Solutions Logo">
+                    <p>Redefining Reality through Artificial Intelligence</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AI Solutions. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
