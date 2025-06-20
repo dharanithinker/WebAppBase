@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeScrollAnimations();
     initializeServiceCards();
     initializeLoadingEffects();
+    initializeSupportButton(); // Initialize the support button
 });
 
 /**
@@ -422,4 +423,274 @@ const initializeLoadingEffects = () => {
         `;
         document.head.appendChild(heroStyles);
     };
+};
+
+/**
+ * Support button functionality
+ */
+const initializeSupportButton = () => {
+    // Create support button HTML
+    const supportButton = document.createElement('div');
+    supportButton.className = 'support-btn';
+    supportButton.setAttribute('aria-label', 'Contact Support');
+    supportButton.setAttribute('role', 'button');
+    supportButton.setAttribute('tabindex', '0');
+    supportButton.innerHTML = `
+        <i class="fas fa-headset"></i>
+        <span class="support-tooltip">Need Help?</span>
+    `;
+    
+    // Create support modal
+    const supportModal = document.createElement('div');
+    supportModal.className = 'support-modal';
+    supportModal.innerHTML = `
+        <div class="support-modal-content">
+            <div class="support-modal-header">
+                <h3>Contact Support</h3>
+                <button class="support-modal-close" aria-label="Close support modal">&times;</button>
+            </div>
+            <div class="support-modal-body">
+                <div class="support-option">
+                    <i class="fas fa-phone"></i>
+                    <div class="support-option-text">
+                        <h4>Call Us</h4>
+                        <p><a href="tel:+919043500128">+91 90435 00128</a></p>
+                    </div>
+                </div>
+                <div class="support-option">
+                    <i class="fas fa-envelope"></i>
+                    <div class="support-option-text">
+                        <h4>Email Us</h4>
+                        <p><a href="mailto:contact@aisolutions.ai">contact@aisolutions.ai</a></p>
+                    </div>
+                </div>
+                <div class="support-option">
+                    <i class="fas fa-comment"></i>
+                    <div class="support-option-text">
+                        <h4>Live Chat</h4>
+                        <p>Start a conversation now</p>
+                    </div>
+                </div>
+                <div class="support-option">
+                    <i class="fas fa-question-circle"></i>
+                    <div class="support-option-text">
+                        <h4>FAQ</h4>
+                        <p>Find answers to common questions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Add CSS for support modal
+    const styleSheet = document.createElement('style');
+    styleSheet.textContent = `
+        .support-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1100;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        .support-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .support-modal-content {
+            background-color: var(--white);
+            border-radius: var(--radius-lg);
+            width: 90%;
+            max-width: 400px;
+            box-shadow: var(--shadow-lg);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        
+        .support-modal.active .support-modal-content {
+            transform: scale(1);
+        }
+        
+        .support-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--gray-light);
+        }
+        
+        .support-modal-header h3 {
+            margin: 0;
+            color: var(--primary-color);
+            font-size: 2rem;
+        }
+        
+        .support-modal-close {
+            background: none;
+            border: none;
+            font-size: 2.4rem;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: var(--transition-normal);
+        }
+        
+        .support-modal-close:hover {
+            color: var(--primary-color);
+        }
+        
+        .support-modal-body {
+            padding: 2rem;
+        }
+        
+        .support-option {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            transition: var(--transition-normal);
+            cursor: pointer;
+            margin-bottom: 1rem;
+        }
+        
+        .support-option:hover {
+            background-color: var(--gray-light);
+        }
+        
+        .support-option i {
+            font-size: 2.4rem;
+            color: var(--primary-color);
+            width: 4rem;
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border-radius: 50%;
+        }
+        
+        .support-option-text h4 {
+            margin: 0 0 0.5rem;
+            font-size: 1.6rem;
+        }
+        
+        .support-option-text p {
+            margin: 0;
+            color: var(--text-light);
+        }
+        
+        /* Accessibility focus styles */
+        .support-btn:focus,
+        .support-modal-close:focus,
+        .support-option:focus-within {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+        
+        /* Keyboard navigation */
+        .support-btn:focus-visible,
+        .support-modal-close:focus-visible {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+    `;
+    document.head.appendChild(styleSheet);
+    
+    // Append elements to DOM
+    document.body.appendChild(supportButton);
+    document.body.appendChild(supportModal);
+    
+    // Add event listeners
+    supportButton.addEventListener('click', () => {
+        supportModal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+        
+        // Focus first interactive element for accessibility
+        const closeButton = supportModal.querySelector('.support-modal-close');
+        setTimeout(() => {
+            closeButton.focus();
+        }, 100);
+    });
+    
+    // Support keyboard interaction
+    supportButton.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            supportButton.click();
+        }
+    });
+    
+    // Close modal when clicking the close button
+    const closeButton = supportModal.querySelector('.support-modal-close');
+    closeButton.addEventListener('click', () => {
+        supportModal.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+        supportButton.focus(); // Return focus to support button
+    });
+    
+    // Close modal when clicking outside
+    supportModal.addEventListener('click', (e) => {
+        if (e.target === supportModal) {
+            supportModal.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+            supportButton.focus(); // Return focus to support button
+        }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && supportModal.classList.contains('active')) {
+            supportModal.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+            supportButton.focus(); // Return focus to support button
+        }
+    });
+    
+    // Make support options interactive
+    const supportOptions = supportModal.querySelectorAll('.support-option');
+    supportOptions.forEach(option => {
+        option.setAttribute('tabindex', '0'); // Make focusable
+        
+        option.addEventListener('click', () => {
+            // Handle different support options
+            const optionType = option.querySelector('h4').textContent;
+            
+            switch(optionType) {
+                case 'Call Us':
+                    window.location.href = 'tel:+919043500128';
+                    break;
+                case 'Email Us':
+                    window.location.href = 'mailto:contact@aisolutions.ai';
+                    break;
+                case 'Live Chat':
+                    // Simulate opening chat window
+                    alert('Live chat feature coming soon!');
+                    break;
+                case 'FAQ':
+                    // Navigate to FAQ section or page
+                    supportModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                    window.location.href = '#contact';
+                    break;
+            }
+        });
+        
+        // Support keyboard interaction
+        option.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                option.click();
+            }
+        });
+    });
 };
