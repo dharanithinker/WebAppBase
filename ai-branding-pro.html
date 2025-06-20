@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Branding Pro - Transform Your Brand with Flash Genie">
+    <title>AI Branding Pro - Flash Genie | AI Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Flash Genie-specific styles */
+        .hero.branding-hero {
+            background: linear-gradient(135deg, #7209b7, #560bad);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .feature-card {
+            background-color: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-normal);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .feature-icon {
+            width: 7rem;
+            height: 7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-md);
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            color: var(--white);
+        }
+        
+        .feature-icon i {
+            font-size: 2.8rem;
+        }
+        
+        .how-it-works {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .step-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-xl);
+        }
+        
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            max-width: 20rem;
+        }
+        
+        .step-number {
+            width: 5rem;
+            height: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .step-content h3 {
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.8rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .service-item {
+            background-color: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-normal);
+        }
+        
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .service-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .service-icon-small {
+            width: 5rem;
+            height: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            color: var(--white);
+        }
+        
+        .service-icon-small i {
+            font-size: 2rem;
+        }
+        
+        .service-header h3 {
+            font-size: 2rem;
+            margin: 0;
+        }
+        
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .use-case-card {
+            background-color: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .use-case-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .use-case-icon {
+            width: 6rem;
+            height: 6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-md);
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            color: var(--white);
+        }
+        
+        .use-case-icon i {
+            font-size: 2.4rem;
+        }
+        
+        .gallery-filter {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .filter-btn {
+            padding: 0.8rem 1.6rem;
+            background: var(--white);
+            border: 1px solid var(--gray);
+            border-radius: var(--radius-md);
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: var(--transition-normal);
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--gradient-primary);
+            color: var(--white);
+            border-color: transparent;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .gallery-item {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-normal);
+            position: relative;
+            aspect-ratio: 1 / 1;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-normal);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: var(--spacing-md);
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--white);
+            transform: translateY(100%);
+            transition: var(--transition-normal);
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        @media (min-width: 768px) {
+            .features-grid,
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .step-container {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            
+            .use-cases-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .use-cases-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.svg" alt="AI Solutions Logo" id="logo-img">
+                <h1>AI Solutions</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero branding-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transform Your Brand with Flash Genie</h1>
+                <p>Flash Genie – Instant AI Photo Generator. Create Magical AI Photos Online or Offline – Anytime, Anywhere.</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn-primary">Explore Services</a>
+                    <a href="#gallery" class="btn-secondary">View Gallery</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/branding-hero.svg" alt="Flash Genie AI Photo Generator">
+            </div>
+        </div>
+    </section>
+
+    <section id="about-flash" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>What is Flash Genie?</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Flash Genie is your instant photo transformation tool powered by AI. Just upload a photo, and we'll turn it into a themed, high-quality image in minutes — perfect for branding, memories, and engagement.</p>
+                    <p>Our advanced AI technology analyzes your images and applies professional-grade transformations that would normally require hours of skilled design work. Whether you need consistent branding across thousands of photos or a single stunning image for a special occasion, Flash Genie delivers magical results every time.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/flash-about.svg" alt="Flash Genie AI Photo Transformation">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Flash Genie?</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Super-Fast Transformations</h3>
+                    <p>Get professionally transformed photos in minutes, not hours. Our AI works at lightning speed to deliver stunning results.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI-Powered Quality</h3>
+                    <p>Advanced artificial intelligence ensures consistent, high-quality transformations every time, regardless of the input image.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Works on Any Device</h3>
+                    <p>Use Flash Genie on any device - desktop, tablet, or mobile. Transform your photos wherever you are, online or offline.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>Scale to Thousands</h3>
+                    <p>Whether you need one photo or thousands, our system scales effortlessly to handle any volume of transformations.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Fully Customizable</h3>
+                    <p>Tailor the transformations to match your brand identity with custom themes, colors, and styles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="perfect-for" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Perfect For?</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <h3>Schools</h3>
+                    <p>Create memorable themed photos for students, events, and yearbooks.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Salons</h3>
+                    <p>Showcase stunning before-and-after transformations with branded imagery.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clinic-medical"></i>
+                    </div>
+                    <h3>Clinics</h3>
+                    <p>Present professional results with consistent, branded patient photos.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h3>Showrooms</h3>
+                    <p>Enhance product displays with themed, attention-grabbing visuals.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-day"></i>
+                    </div>
+                    <h3>Events</h3>
+                    <p>Create memorable keepsakes for attendees with themed photo transformations.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>Gifting</h3>
+                    <p>Transform ordinary photos into extraordinary personalized gifts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="how-it-works">
+                <div class="step-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Upload a Photo</h3>
+                            <p>Select any photo you want to transform, directly from your device.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Choose a Theme</h3>
+                            <p>Select from our wide range of professional themes and styles.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Let AI Work Its Magic</h3>
+                            <p>Our AI transforms your photo into a stunning themed image.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Download or Share</h3>
+                            <p>Instantly download your transformed image or share it directly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>What We Do</h2>
+                <div class="underline"></div>
+                <p>Our AI-powered tools create exceptional branding assets that help your business stand out.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-header">
+                        <div class="service-icon-small">
+                            <i class="fas fa-pen-fancy"></i>
+                        </div>
+                        <h3>AI-Generated Logos</h3>
+                    </div>
+                    <p>Design unique and memorable brand logos in seconds, tailored to your company's identity and values.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-header">
+                        <div class="service-icon-small">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Visual Identity Creation</h3>
+                    </div>
+                    <p>Build a complete brand theme with colors, fonts, and graphics that perfectly represent your brand essence.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-header">
+                        <div class="service-icon-small">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3>Automated Brand Guidelines</h3>
+                    </div>
+                    <p>Maintain consistency with AI-generated guidelines that ensure your brand looks professional across all platforms.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-header">
+                        <div class="service-icon-small">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <h3>Customizable Branding Assets</h3>
+                    </div>
+                    <p>Access ready-to-use templates for digital and print media that align perfectly with your brand identity.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-header">
+                        <div class="service-icon-small">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3>Dynamic Branding</h3>
+                    </div>
+                    <p>Adapt your brand identity as your business evolves, with AI that grows and changes with your needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Gallery</h2>
+                <div class="underline"></div>
+                <p>Explore a collection of stunning AI-generated branding designs created with AI Branding Pro.</p>
+            </div>
+            <div class="gallery-filter">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Logos</button>
+                <button class="filter-btn">Brand Identity</button>
+                <button class="filter-btn">Guidelines</button>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="logos">
+                    <div class="gallery-caption">
+                        <h3>Quantum Tech Branding</h3>
+                        <p>Logos</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="brand-identity">
+                    <div class="gallery-caption">
+                        <h3>Eco-Friendly Brand Suite</h3>
+                        <p>Brand Identity</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="guidelines">
+                    <div class="gallery-caption">
+                        <h3>Modern Fashion Identity</h3>
+                        <p>Guidelines</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="logos">
+                    <div class="gallery-caption">
+                        <h3>Minimal Corporate Brand</h3>
+                        <p>Logos</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="brand-identity">
+                    <div class="gallery-caption">
+                        <h3>Creative Agency Branding</h3>
+                        <p>Brand Identity</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="guidelines">
+                    <div class="gallery-caption">
+                        <h3>Tech Startup Identity</h3>
+                        <p>Guidelines</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="use-cases" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Use Cases</h2>
+                <div class="underline"></div>
+                <p>Discover how Flash Genie can transform your photos into stunning, branded visuals for various industries.</p>
+            </div>
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>School Campaigns</h3>
+                    <p>Create memorable student photos and branded keepsakes for school events and campaigns.</p>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Salon Promos</h3>
+                    <p>Showcase stunning before-and-after transformations to attract more customers.</p>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <h3>Gift Vouchers</h3>
+                    <p>Design personalized gift vouchers that leave a lasting impression.</p>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-hashtag"></i>
+                    </div>
+                    <h3>Social Media Buzz</h3>
+                    <p>Generate eye-catching visuals to boost engagement on social media platforms.</p>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>Corporate Gifting</h3>
+                    <p>Deliver branded keepsakes for corporate events and employee appreciation.</p>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-user-astronaut"></i>
+                    </div>
+                    <h3>Fantasy Avatars</h3>
+                    <p>Transform photos into creative, themed avatars for fun and engagement.</p>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Hair Salons</h3>
+                    <p>Provide customers with branded photos to remember their experience.</p>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-syringe"></i>
+                    </div>
+                    <h3>Aesthetic Clinics</h3>
+                    <p>Showcase results with high-quality, branded before-and-after photos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <div class="underline"></div>
+                <p>Ready to elevate your brand with AI-powered designs? Reach out to us today.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="text">
+                            <h3>Email</h3>
+                            <p><a href="mailto:contact@aisolutions.ai">contact@aisolutions.ai</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="text">
+                            <h3>Phone</h3>
+                            <p><a href="tel:+919043500128">+91 90435 00128</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="text">
+                            <h3>Location</h3>
+                            <p>Coimbatore</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h3>Want to try Flash Genie?</h3>
+            <p>Get in touch and let's turn your photos into something unforgettable.</p>
+            <a href="#contact" class="btn-primary">Contact Us</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.svg" alt="AI Solutions Logo">
+                    <p>Redefining Reality through Artificial Intelligence</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AI Solutions. All Rights Reserved.</p>
+                <p>We're here to help you create unforgettable brand experiences. Whether it's a question, idea or collaboration — let's connect!</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
